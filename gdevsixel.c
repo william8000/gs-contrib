@@ -51,8 +51,8 @@ extern int atoi(P1(const char *));
 static dev_proc_print_page(sixel_print_page);
 
 /* Sixel parameters for a vt300 */
-gx_device_printer gs_sixel_device =
-  prn_device(prn_std_procs, "sixel",
+const gx_device_printer far_data gs_sixel_device =
+  prn_device(gdev_prn_initialize_device_procs_mono_bg, "sixel",
 	90,				/* width_10ths */
 	60,				/* height_10ths */
 	124,				/* xdpi */
@@ -61,8 +61,8 @@ gx_device_printer gs_sixel_device =
 	1, sixel_print_page);
 
 /* Sixel parameters for kermit */
-gx_device_printer gs_sixelk_device =
-  prn_device(prn_std_procs, "sixelk",
+const gx_device_printer far_data gs_sixelk_device =
+  prn_device(gdev_prn_initialize_device_procs_mono_bg, "sixelk",
 	90,				/* width_10ths */
 	60,				/* height_10ths */
 	71,				/* xdpi */

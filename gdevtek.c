@@ -40,8 +40,8 @@ extern char *getenv(P1(const char *));
 
 /* The device descriptor */
 static dev_proc_print_page(tek_print_page);
-gx_device_printer gs_tek_device =
-  prn_device(prn_std_procs, "tek",
+const gx_device_printer far_data gs_tek_device =
+  prn_device(gdev_prn_initialize_device_procs_mono_bg, "tek",
 	89,				/* width_10ths */
 	60,				/* height_10ths */
 	115,				/* xdpi */
